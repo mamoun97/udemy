@@ -1,7 +1,9 @@
 "use client"
 import objectifsData from '@/data/objectifs-data'
 import { Button, Card } from '@nextui-org/react'
+import Link from 'next/link'
 import React, { useMemo, useState } from 'react'
+import { IoMdArrowForward } from 'react-icons/io'
 
 export default function Objectifs() {
   const [index, setIndex] = useState(0)
@@ -16,13 +18,13 @@ export default function Objectifs() {
           Un apprentissage axé sur vos objectifs
         </h1>
       </div>
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 gap-4 max-sm:grid-cols-1">
 
         <div className="flex flex-col gap-4 p-6">
           {
             objectifsData.map((el, k) => {
-              return <div  key={k} className={`
-                  p-6 flex flex-row items-center gap-4 rounded-md cursor-pointer
+              return <div key={k} className={`
+                  p-6 flex flex-row items-center overflow-hidden gap-4 rounded-md cursor-pointer
                   border  border-content4 hover:bg-content2
                   ${index == k ? "!border-secondary border-s-8" : ""}
                 `}
@@ -42,6 +44,14 @@ export default function Objectifs() {
                   <p className='text-base text-start '>
                     {el.desc}
                   </p>
+                  {
+                    el.abnm && <div >
+                      <Link href={"#"} className='text-sm flex items-center gap-2 font-bold text-secondary'>
+                        En Savoir plus
+                        <IoMdArrowForward />
+                      </Link>
+                    </div>
+                  }
                 </div>
               </div>
             })
