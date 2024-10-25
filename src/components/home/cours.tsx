@@ -27,7 +27,7 @@ const data = [
 export default function Cours() {
 
 
-    return <div className="my-8 overflow-hidden">
+    return <div className="my-8 ">
 
         <div className="flex flex-col justify-center items-center text-center gap-4 my-6">
             <h1 className="text-3xl font-semibold ">
@@ -37,7 +37,7 @@ export default function Cours() {
                 Des compétences essentielles aux sujets techniques, Udemy contribue à votre développement professionnel.
             </p>
         </div>
-        <Tabs className="mt-6 customTabs">
+        <Tabs className="mt-6 w-full">
             {
                 data.map((el, k) => {
                     return <Tab key={"c-" + k} title={el.name} >

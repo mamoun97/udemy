@@ -39,7 +39,7 @@ export default function LastSection() {
                                     </div>
                                 </div>
                                 <Divider className="my-4" />
-                                <Button className='rounded-sm' color='primary' size='lg'>
+                                <Button className='' color='secondary' size='lg'>
                                     Lire l'article complet
                                     <IoMdArrowForward />
                                 </Button>

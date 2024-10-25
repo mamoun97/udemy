@@ -1,5 +1,5 @@
 import review from '@/data/reviews'
-import { Avatar, Card } from '@nextui-org/react'
+import { Avatar, Button, Card } from '@nextui-org/react'
 
 import React from 'react'
 import { RiDoubleQuotesL } from 'react-icons/ri'
@@ -29,6 +29,9 @@ export default function ReviewsSection() {
                                     {el.info}
                                 </div>
                             </div>
+                            <Button variant='light'>
+                                More
+                            </Button>
                         </Card>
                     })
                 }

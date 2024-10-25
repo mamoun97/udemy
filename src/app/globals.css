@@ -2,22 +2,5 @@
 @tailwind components;
 @tailwind utilities;
 
-.customTabs .nextui-tabs-tab {
-    position: relative;
-    padding-bottom: 8px; /* Add space for the underline */
-  }
-  
-  .customTabs .nextui-tabs-tab[aria-selected="true"] {
-    color: #0070f3; /* Customize active tab color */
-  }
-  
-  .customTabs .nextui-tabs-tab[aria-selected="true"]::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 2px; /* Thickness of the underline */
-    background-color: #0070f3; /* Color of the underline */
-  }
+
   
