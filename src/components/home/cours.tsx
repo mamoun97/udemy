@@ -3,6 +3,7 @@
 import coursData from "@/data/coursData"
 import { Card, Image, CardBody, CardHeader, Tab, Tabs } from "@nextui-org/react"
 import Rating from "../ui/rating"
+import Link from "next/link"
 
 const data = [
     {
@@ -52,10 +53,12 @@ export default function Cours() {
         <div className="grid grid-cols-4 gap-2 w-full mt-4 max-[810px]:grid-cols-3 max-sm:grid-cols-2 max-[540px]:grid-cols-1">
             {
                 coursData.map((el, k) => {
-                    if(k>7)return ""
-                    return <CardItem
-                        data={el}
-                    />
+                    if (k > 7) return ""
+                    return <Link href={"/course/"+el.id}>
+                        <CardItem
+                            data={el}
+                        />
+                    </Link>
                 })
             }
         </div>
