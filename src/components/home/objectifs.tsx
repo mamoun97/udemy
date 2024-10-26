@@ -33,7 +33,7 @@ export default function Objectifs() {
                 }}>
                 <img src={el.icon} alt="" className='h-11' />
                 <div className='h-full text-lg w-full flex flex-col gap-2'>
-                  <h1 className='text-xl font-bold flex items-center gap-2'>
+                  <h1 className='text-xl font-bold flex items-center gap-2 max-sm:flex-col'>
                     {el.title}
                     {
                       el.abnm && <Button className='p-1 font-semibold' variant='bordered' color='secondary' size='sm'>

@@ -49,7 +49,7 @@ export default function Cours() {
 
 
         </Tabs>
-        <div className="grid grid-cols-4 gap-2 w-full mt-4 max-sm:grid-cols-2 max-[540px]:grid-cols-1">
+        <div className="grid grid-cols-4 gap-2 w-full mt-4 max-[810px]:grid-cols-3 max-sm:grid-cols-2 max-[540px]:grid-cols-1">
             {
                 coursData.map((el, k) => {
                     if(k>7)return ""

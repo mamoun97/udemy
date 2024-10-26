@@ -31,7 +31,7 @@ export default function Tarifs() {
                                 <h1 className='font-bold'>{el.t1}</h1>
                                 <p className='text-xs'>{el.t2}</p>
                                 <div className="my-4">
-                                    <Button fullWidth color={el.color as "primary"|"secondary"}>
+                                    <Button fullWidth color={el.color as "primary"|"secondary"} radius='sm'>
                                         {el.btnText}
                                         <IoMdArrowForward />
                                     </Button>
@@ -40,7 +40,7 @@ export default function Tarifs() {
                                     {
                                         el.items.map((item, i) => {
                                             return <p className='flex gap-2'>
-                                                <AiOutlineCheckCircle className='text-lg text-green-600' />
+                                                <AiOutlineCheckCircle className='w-[18px] h-[18px] min-w-[18px] text-green-600' />
                                                 <p className='text-sm'>
                                                     {item}
 

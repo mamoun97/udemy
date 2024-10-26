@@ -12,12 +12,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
+        className="font-myfont"
       >
         <NextuiProvider>
-          {/* <div className="dark"> */}
-
-            {children}
-          {/* </div> */}
+          {children}
         </NextuiProvider>
       </body>
     </html>
