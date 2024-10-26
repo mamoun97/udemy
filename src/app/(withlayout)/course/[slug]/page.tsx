@@ -21,7 +21,9 @@ export default function Page({ params }: { params: { slug: string } }) {
                         <h1 className='font-bold text-2xl '>{cour.title}</h1>
                         <p className="text-lg text-white/90  md:max-w-[80%]">{cour.headline}</p>
                         <div className="flex items-center gap-1">
-                            <span className="font-bold text-sm">{cour.avg_rating.toFixed(1)}</span>
+                            <span className="font-bold text-sm">
+                                {cour.avg_rating.toFixed(1)}
+                            </span>
                             <Rating size="sm" initialRating={Math.floor(cour.rating)} />
                             <span className="text-xs">
                                 ({cour.num_reviews})

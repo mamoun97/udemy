@@ -11,7 +11,6 @@ const ButtonTheme = () => {
   const currentTheme = theme === "system" ? systemTheme : theme;
   return (
     <Button
-      radius="full"
       isIconOnly
       // className="absolute top-5 right-5"
       variant="light"

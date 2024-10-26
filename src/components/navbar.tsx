@@ -5,6 +5,7 @@ import Link from "next/link";
 import { IoSearch } from "react-icons/io5";
 import Swiper from './ui/swiper';
 import ButtonTheme from './button-theme';
+import ButtonLang from './button-lang';
 export default function Navbar({ withSlider = false }: { withSlider?: boolean }) {
     return (
         <>
@@ -12,44 +13,48 @@ export default function Navbar({ withSlider = false }: { withSlider?: boolean })
                 <NavbarBrand>
                     {/* <AcmeLogo /> */}
                     <Link href={"/"}>
-                    <p className="font-bold text-inherit">UDEMY</p>
+                        <p className="font-bold text-inherit">UDEMY</p>
                     </Link>
                 </NavbarBrand>
                 <NavbarContent className="hidden sm:flex gap-4" justify="center">
                     <NavbarItem>
-                        <Link color="foreground" href="#">
+                        <Link color="foreground" href="#" className='tracking-wider'>
                             Features
                         </Link>
                     </NavbarItem>
-                    <NavbarItem isActive>
-                        <Link href="#" aria-current="page">
+                    <NavbarItem >
+                        <Link href="#" aria-current="page" className='tracking-wider'>
                             Customers
                         </Link>
                     </NavbarItem>
                     <NavbarItem>
-                        <Link color="foreground" href="#">
+                        <Link color="foreground" href="#" className='tracking-wider'>
                             Categories
                         </Link>
                     </NavbarItem>
                 </NavbarContent>
-                <ButtonTheme />
+                <div className='flex gap-1'>
+                    <ButtonTheme />
+                    <ButtonLang />
+                </div>
                 <NavbarContent justify="end">
-                    <NavbarItem className="hidden lg:flex">
+                    <NavbarItem className="flex gap-1 ">
                         <Input
                             type="email"
                             label=""
+                            className='min-w-40 hidden lg:flex'
                             placeholder="Search "
                             labelPlacement="outside"
                             endContent={
-                                <IoSearch />
+                                <IoSearch className='w-4 h-4' />
                             }
 
                         />
-                    </NavbarItem>
-                    <NavbarItem className="hidden lg:flex">
-                        <Link href="/auth/login">Login</Link>
-                    </NavbarItem>
-                    <NavbarItem>
+                        <Link href="/auth/login" className='hidden lg:flex'>
+                            <Button as={"div"} variant="solid">
+                                Sign In
+                            </Button>
+                        </Link>
                         <Link href="/auth/register"  >
                             <Button color="primary" as={"div"} variant="solid">
                                 Sign Up
