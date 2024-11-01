@@ -5,6 +5,7 @@ import Objectifs from "@/components/home/objectifs";
 import ReviewsSection from "@/components/home/reviews";
 import Tarifs from "@/components/home/tarifs";
 import Layout from "@/components/layout";
+import ModalFreeCours from "@/components/modal-free-cours";
 
 
 
@@ -27,6 +28,7 @@ export default function Home() {
       <div className="mt-14  mx-auto">
         <LastSection />
       </div>
+      <ModalFreeCours/>
     </Layout>
   );
 }
