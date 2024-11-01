@@ -40,7 +40,7 @@ export default function RootLayout({
       >
         <NextProgress />
         <NextuiProvider>
-          {children}
+          {/* {children} */} ""
         </NextuiProvider>
       </body>
     </html>
