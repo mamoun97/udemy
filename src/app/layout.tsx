@@ -33,14 +33,14 @@ export default function RootLayout({
     <html lang="en" className="no-scrollbar">
       <Head>
         <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#ffffff" />
+        <meta name="theme-color" content="#F1F1F1" />
       </Head>
       <body
         className="font-myfont no-scrollbar"
       >
         <NextProgress />
         <NextuiProvider>
-          {children} 
+          {children}   
         </NextuiProvider>
       </body>
     </html>
