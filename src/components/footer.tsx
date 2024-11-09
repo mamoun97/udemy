@@ -1,8 +1,9 @@
-import { Button } from '@nextui-org/react'
+import { Button, Divider } from '@nextui-org/react'
 import Link from 'next/link'
 import React from 'react'
 import { MdLanguage } from 'react-icons/md'
 import ButtonTheme from './button-theme'
+import ButtonLang from './button-lang'
 
 
 const logos = [
@@ -50,6 +51,7 @@ export default function Footer() {
                         })
                     }
                 </div>
+                <Divider className='my-4 opacity-50' />
                 <div className="grid grid-cols-4 gap-2 mt-10 max-md:grid-cols-2 max-sm:grid-cols-1 max-sm:gap-2">
                     <div className='flex flex-col'>
                         {
@@ -78,12 +80,15 @@ export default function Footer() {
                             })
                         }
                     </div>
-                    <div className='flex justify-end max-sm:justify-center '>
+                    <div className='flex justify-end gap-2 max-sm:justify-center '>
                         <ButtonTheme />
-                        <Button className='rounded-none' >
-                            Language
-                            <MdLanguage />
-                        </Button>
+
+                        <ButtonLang>
+                            <Button className='' >
+                                Language
+                                <MdLanguage />
+                            </Button>
+                        </ButtonLang>
                     </div>
                 </div>
                 <div className="flex justify-between mt-10 max-sm:flex-col max-sm:items-center max-sm:gap-2">

@@ -20,7 +20,7 @@ export default function Objectifs() {
       </div>
       <div className="grid grid-cols-2 gap-4 max-sm:grid-cols-1">
 
-        <div className="flex flex-col gap-4 p-6">
+        <div className="flex flex-col gap-4 py-6">
           {
             objectifsData.map((el, k) => {
               return <div key={k} className={`

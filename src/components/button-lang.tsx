@@ -1,3 +1,4 @@
+"use client"
 import { getLanguageCookie, setLanguageCookie } from "@/lang-cookie";
 import { useRouter } from "next/navigation";
 import {
@@ -11,7 +12,7 @@ import { Button } from "@nextui-org/button";
 import { IoLanguageOutline } from "react-icons/io5";
 
 
-export default function ButtonLang() {
+export default function ButtonLang({children}:{children?:React.ReactNode}) {
   const { refresh } = useRouter();
   // const { i18n } = useTranslation("loginregister")
   // Get the current language from the cookie (if set)
@@ -40,9 +41,9 @@ export default function ButtonLang() {
     <>
       <Dropdown>
         <DropdownTrigger>
-          <Button isIconOnly variant="light" className="">
+          {children?children:<Button isIconOnly variant="light" className="">
             <IoLanguageOutline className="h-4 w-4" />
-          </Button>
+          </Button>}
         </DropdownTrigger>
         <DropdownMenu variant="light" aria-label="Change language Dropdown">
           {

@@ -1,9 +1,16 @@
+"use client"
 import Layout from '@/components/layout'
+import { UserAuth } from '@/providers/auth-provider'
 import { Button, Input } from '@nextui-org/react'
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 
 export default function Login() {
+    const {  isLoading, signWithEmailAndPassword } = UserAuth()
+    const [data, setData] = useState({
+        email: "",
+        password: ""
+    })
     return (
         <div>
             <Layout>
@@ -19,9 +26,16 @@ export default function Login() {
                             <div className="flex flex-col mt-12  max-w-md gap-2 mx-auto p-4 ">
                                 <h1 className='text-2xl mb-4 text-center  font-bold'>Connectez-vous pour continuer à apprendre</h1>
 
-                                <Input type="email" variant='flat' label="Email" placeholder="Enter your email" fullWidth />
+                                <Input type="email" variant='flat'
+                                    label="Email" placeholder="Enter your email"
+                                    onChange={(e) => setData({ ...data, email: e.target.value })}
+                                    fullWidth />
+                                <Input type="password" variant='flat'
+                                    onChange={(e) => setData({ ...data, password: e.target.value })}
+                                    label="Password" placeholder="Enter your password"
+                                    fullWidth />
 
-                                <Button color="primary" variant="solid" fullWidth>
+                                <Button onClick={()=>signWithEmailAndPassword(data)} color="primary" isLoading={isLoading} variant="solid" fullWidth>
                                     Sign in
                                 </Button>
 
@@ -50,7 +64,7 @@ export default function Login() {
                                 <div className='text-center text-sm mt-6'>
                                     <span className='text-center'>
                                         Vous n'avez pas de compte ? <Link href={"/auth/register"} className='text-primary'>S’inscrire</Link>
-                                       
+
                                     </span>
                                 </div>
                             </div>

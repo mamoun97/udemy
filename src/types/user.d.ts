@@ -1,0 +1,33 @@
+type User={
+    firstName: string,
+    lastName: string,
+    email: string,
+    password: string,
+    phone: string,
+    address: string,
+    avatar: string,
+}
+type UserAuth = {
+    tokens: string[],
+    id: number,
+    firstName: string,
+    lastName: string,
+    email: string,
+    phone: string,
+    address: string,
+    description: string,
+    role: string,
+    rating: number,
+    active: boolean,
+    isOnline: boolean,
+    socketId: string | null,
+    facebook: string,
+    instagram: string,
+    twitter: string,
+    youtube: string,
+    resume: string,
+    avatar: string,
+    createdAt: string,
+    updatedAt: string,
+    token: string
+}

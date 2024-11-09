@@ -1,18 +1,25 @@
 "use client"
 import React from 'react'
-import { Button, Input, Navbar as NavbarUI, NavbarBrand, NavbarContent, NavbarItem, Chip } from "@nextui-org/react";
+import { Button, Input, Navbar as NavbarUI, NavbarBrand, NavbarContent, NavbarItem, Chip, User, Dropdown, DropdownTrigger, DropdownMenu, DropdownItem } from "@nextui-org/react";
 import Link from "next/link";
-import { IoSearch } from "react-icons/io5";
+import { IoCartOutline, IoLogOut, IoSearch, IoSettings } from "react-icons/io5";
 import Swiper from './ui/swiper';
 import ButtonTheme from './button-theme';
 import ButtonLang from './button-lang';
 import images from '@/assets/images';
 import { GiPlayButton } from 'react-icons/gi';
+import { UserAuth } from '@/providers/auth-provider';
+import { IoMdCart } from 'react-icons/io';
 export default function Navbar({ withSlider = false }: { withSlider?: boolean }) {
+    const { user,logOut } = UserAuth()
     return (
         <>
-            <NavbarUI position="sticky">
-                <NavbarBrand>
+            <NavbarUI position="sticky" classNames={{
+                wrapper: "max-w-6xl w-full",
+
+
+            }}>
+                <NavbarBrand >
                     {/* <AcmeLogo /> */}
                     <Link href={"/"}>
                         <p className="font-bold text-inherit">UDEMY</p>
@@ -36,11 +43,14 @@ export default function Navbar({ withSlider = false }: { withSlider?: boolean })
                     </NavbarItem>
                 </NavbarContent>
                 <div className='flex gap-1'>
-                    <ButtonTheme />
+                    {/* <ButtonTheme /> */}
                     <ButtonLang />
+                    <Button isIconOnly variant="light" >
+                        <IoCartOutline className="h-5 w-5"/>
+                    </Button>
                 </div>
                 <NavbarContent justify="end">
-                    <NavbarItem className="flex gap-1 ">
+                    <NavbarItem className="flex gap-2 ">
                         <Input
                             type="email"
                             label=""
@@ -52,16 +62,46 @@ export default function Navbar({ withSlider = false }: { withSlider?: boolean })
                             }
 
                         />
-                        <Link href="/auth/login" className='hidden lg:flex'>
-                            <Button as={"div"} variant="solid">
-                                Sign In
-                            </Button>
-                        </Link>
-                        <Link href="/auth/register"  >
-                            <Button color="primary" as={"div"} variant="solid">
-                                Sign Up
-                            </Button>
-                        </Link>
+                        {
+                            user ?
+
+                                <Dropdown>
+                                    <DropdownTrigger>
+                                        <User
+                                            name={user.firstName + " " + user.lastName}
+                                            description={user.description}
+                                            className='cursor-pointer'
+                                            classNames={{
+                                                description: "max-w-24 line-clamp-1"
+                                            }}
+                                            avatarProps={{
+                                                src: user.avatar,
+                                                size: "sm",
+                                                className: "ring ring-primary ring-offset-2 ring-offset-slate-50"
+                                            }}
+                                        />
+                                    </DropdownTrigger>
+                                    <DropdownMenu aria-label="Static Actions">
+                                        <DropdownItem startContent={<IoSettings className='w-4 h-4' />} key="setting">Settings</DropdownItem>
+                                        <DropdownItem onClick={()=>logOut()} startContent={<IoLogOut className='w-4 h-4' />} key="logout" className="text-danger" color="danger">
+                                            Logout
+                                        </DropdownItem>
+                                    </DropdownMenu>
+                                </Dropdown>
+                                : <>
+                                    <Link href="/auth/login" className='hidden lg:flex'>
+                                        <Button as={"div"} variant="solid">
+                                            Sign In
+                                        </Button>
+                                    </Link>
+                                    <Link href="/auth/register"  >
+                                        <Button color="primary" as={"div"} variant="solid">
+                                            Sign Up
+                                        </Button>
+                                    </Link>
+                                </>
+                        }
+
                     </NavbarItem>
                 </NavbarContent>
             </NavbarUI>
@@ -71,7 +111,7 @@ export default function Navbar({ withSlider = false }: { withSlider?: boolean })
                 {withSlider && <Swiper
                     className="grow"
                     items={[
-                        <div className="grow h-full relative w-full grid grid-cols-2 max-md:grid-cols-1 gap-2  ">
+                        <div className="grow h-full w-6xl relative w-full grid grid-cols-2 max-md:grid-cols-1 gap-2  ">
                             <div className="absolute top-1/4 left-[10%] w-36 h-40 blur-3xl bg-blue-400/30 rounded-full"></div>
                             <div className="absolute top-[10%] right-[10%] w-36 h-40 blur-3xl bg-violet-500/30 rounded-full"></div>
                             <div className="absolute top-1/2 left-1/2 w-36 h-40 blur-3xl bg-fuchsia-600/30 scale-150 rounded-full"></div>
@@ -91,7 +131,7 @@ export default function Navbar({ withSlider = false }: { withSlider?: boolean })
                                         <Button color='primary' radius='full'>
                                             Explore Courses
                                         </Button>
-                                        <Button isIconOnly  color='warning' radius='full'>
+                                        <Button isIconOnly color='warning' radius='full'>
                                             <GiPlayButton className='w-5 h-5 text-white' />
                                         </Button>
                                         <span className='text-base underline font-semibold'>Watch Demo</span>
@@ -103,19 +143,7 @@ export default function Navbar({ withSlider = false }: { withSlider?: boolean })
 
                             </div>
                         </div>,
-                        // <div className="grow text-black flex items-start flex-col justify-center bg-center h-full w-full bg-cover bg-no-repeat " style={{
-                        //     backgroundImage: "url('https://img-c.udemycdn.com/notices/web_carousel_slide/image/e6cc1a30-2dec-4dc5-b0f2-c5b656909d5b.jpg')"
-                        // }}>
 
-                        //     <div className="ps-6 max-w-6xl mx-auto w-full">
-                        //         <h1 className="text-4xl font-bold  max-w-xl mb-6">
-                        //             Un apprentissage qui vous ressemble
-                        //         </h1>
-                        //         <p className="text-lg max-w-2xl">
-                        //             Des compétences pour aujourd'hui (et demain). Nous vous accompagnons dans vos premiers pas.
-                        //         </p>
-                        //     </div>
-                        // </div>
                     ]}
                     breakpoints={{
                         0: {
