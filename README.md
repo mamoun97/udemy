@@ -2,6 +2,8 @@
 
 A Udemy-inspired online learning platform built with Next.js. The project aims to provide an online learning experience where users can explore educational content through a modern web interface.
 
+![Udemy Clone Preview](./screenshots/screen1.png)
+
 ## 🔗 Project Repository
 
 Explore the source code on GitHub:
