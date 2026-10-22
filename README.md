@@ -1,36 +1,83 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Udemy Clone — Online Learning Platform
 
-## Getting Started
+A Udemy-inspired online learning platform built with Next.js. The project aims to provide an online learning experience where users can explore educational content through a modern web interface.
 
-First, run the development server:
+## 🔗 Project Repository
+
+Explore the source code on GitHub:
+
+[**Udemy Clone — GitHub Repository**](https://github.com/mamoun97/udemy)
+
+## 🚀 Getting Started
+
+Follow these steps to run the project locally.
+
+### Prerequisites
+
+Make sure you have the following installed:
+
+- [Node.js](https://nodejs.org/)
+- npm, yarn, pnpm, or Bun
+- Git
+
+### Installation
+
+Clone the repository:
+
+```bash
+git clone https://github.com/mamoun97/udemy.git
+```
+
+Navigate to the project directory:
+
+```bash
+cd udemy
+```
+
+Install the dependencies:
+
+```bash
+npm install
+```
+
+### Run the Development Server
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser to access the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+The page will automatically update as you modify the source code.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Built With
 
-## Learn More
+- **Next.js** — React framework for building web applications.
+- **React** — Component-based user interface development.
+- **TypeScript / JavaScript** — Application development, depending on the project configuration.
+- **CSS** — Styling and responsive layouts.
 
-To learn more about Next.js, take a look at the following resources:
+## 🎓 Project Overview
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The project is inspired by [Udemy](https://www.udemy.com/), an online learning platform.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Its goal is to recreate the experience of browsing and accessing online courses through a modern web application.
 
-## Deploy on Vercel
+## 📚 Resources
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [Next.js Documentation](https://nextjs.org/docs)
+- [React Documentation](https://react.dev/)
+- [TypeScript Documentation](https://www.typescriptlang.org/docs/)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 👨‍💻 Author
+
+**Mamoun Ben Abderrahmane**
+
+- GitHub: [@mamoun97](https://github.com/mamoun97)
+- Portfolio: [mamoun.dev](https://mamoun.dev)
+
+## 📄 License
+
+Check the repository for licensing information before using or distributing this project.
