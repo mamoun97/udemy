@@ -10,22 +10,24 @@ import ModalFreeCours from "@/components/modal-free-cours";
 
 
 
+
 export default function Home() {
- 
+
   return (
     <Layout withSlider>
       <div className="mt-3 max-w-6xl flex flex-col gap-3 mx-auto p-4">
+       
         <Cours />
-      
+
         <Objectifs />
-      
+
         <Tarifs />
-      
+
         <ReviewsSection />
-     
+
         <LastSection />
       </div>
-      <ModalFreeCours/>
+      <ModalFreeCours />
     </Layout>
   );
 }
